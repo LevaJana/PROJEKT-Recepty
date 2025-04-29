@@ -4,13 +4,13 @@ html { box-sizing: border-box; }
 
 body {
 	margin: 0;
-	font-family: 'Source Sans Pro', sans-serif;
 }
 
 .paticka {
 	text-align: center;
 	font-size: 14px;
 	color: silver;
+	margin-top: 20px;
 }
 
 .paticka a {
@@ -33,3 +33,149 @@ Nastav je receptům jako obrázky na pozadí (tj. nepřidávej je jako <img> do 
 Na rozložení prvků NEPOUŽÍVEJ absolutní pozicování, ale pouze flexboxy.
 Flexboxy mohou být vnořené do sebe, klidně několikrát.
 */
+
+body {
+	font-family: 'Source Sans 3', sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+	color: white;
+}
+
+p {
+	margin: 0;
+}
+
+h1 {
+	font-family: Raleway, sans-serif;
+	font-weight: 800;
+	margin: 0;
+}
+
+.hlavni h1 {
+	font-size: 28px;
+}
+
+.vedlejsi h1 {
+	font-size: 18px;
+}
+
+.hlavni {
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(images/salat.jpg);
+	min-height: 200px;
+}
+
+.hlavni:hover {
+	background-image: url(images/salat.jpg);
+}
+
+.vedlejsi .recept {
+	min-height: 90px;
+}
+
+.prvni {
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(images/chlebicek.jpg);
+}
+
+.druhy {
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(images/tacos.jpg);
+}
+
+.treti {
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(images/cizrna.jpg);
+}
+
+.ctvrty {
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(images/burger.jpg);
+}
+
+.prvni:hover {
+	background-image: url(images/chlebicek.jpg);
+}
+
+.druhy:hover {
+	background-image: url(images/tacos.jpg);
+}
+
+.treti:hover {
+	background-image: url(images/cizrna.jpg);
+}
+
+.ctvrty:hover {
+	background-image: url(images/burger.jpg);
+}
+
+.recept {
+	padding: 10px;
+	background-color: black;
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border-bottom: 1px solid white;
+}
+
+.komentare {
+	display: flex;
+	justify-content: space-between;
+}
+
+@media screen and (min-width: 480px) {
+	.recept {
+		padding: 20px;
+	}
+	
+	.vedlejsi {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.vedlejsi .recept {
+		min-height: 150px;
+		flex: 1 1 50%;
+	}
+
+	.vedlejsi .recept:nth-child(2n) {
+		border-left: 1px solid white;
+	}
+
+	.hlavni {
+		min-height: 250px;
+	}
+
+	.hlavni h1 {
+		font-size: 36px;
+	}
+	
+	.vedlejsi h1 {
+		font-size: 22px;
+	}
+}
+
+@media screen and (min-width: 860px) {
+	.hlavni h1 {
+		font-size: 48px;
+	}
+	
+	.vedlejsi h1 {
+		font-size: 28px;
+	}
+
+	.recepty {
+		display: flex;
+	}
+
+	.hlavni {
+		flex: 1 1 calc(100% / 3);
+		border-right: 1px solid white;
+		min-height: 400px;
+	}
+
+	.vedlejsi {
+		flex: 1 1 calc(2 * (100% / 3))
+	}
+
+	.vedlejsi .recept {
+		min-height: 200px;
+	}
+}
