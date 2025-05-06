@@ -120,7 +120,7 @@ h1 {
 	justify-content: space-between;
 }
 
-@media screen and (min-width: 580px) {
+@media screen and (min-width: 780px) {
 	.recept {
 		padding: 20px;
 	}
